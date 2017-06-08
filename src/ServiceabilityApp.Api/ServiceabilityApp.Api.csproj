@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\css\site.css" />
+    <Content Include="Client\css\site.css" />
     <Content Include="wwwroot\Index.html" />
   </ItemGroup>
   <ItemGroup>
@@ -17,9 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
