@@ -1,10 +1,11 @@
-﻿var path = require('path');
+﻿/// <binding AfterBuild='Run - Development' />
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
     entry: {
         app: './Client/app/app.js',
-        vendor: ['angular']
+        vendor: ['angular', 'angular-ui-router']
     },
     output: {
         path: __dirname + '/wwwroot',
