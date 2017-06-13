@@ -18,5 +18,13 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Client\app\assess\review.component.js">
+      <DependentUpon>review.component.html</DependentUpon>
+    </None>
+    <None Update="Client\app\assess\entities.component.js">
+      <DependentUpon>entities.component.html</DependentUpon>
+    </None>
+  </ItemGroup>
 
 </Project>

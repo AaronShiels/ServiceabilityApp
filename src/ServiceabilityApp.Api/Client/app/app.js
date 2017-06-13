@@ -1,5 +1,19 @@
-﻿var angular = require('angular');
-var bootstrap = require('bootstrap/dist/css/bootstrap.css');
-var site = require('../css/site.css')
+﻿'use strict';
 
-angular.module('app', []);
+require('angular');
+require('angular-ui-router');
+require('bootstrap/dist/css/bootstrap.css');
+require('../css/site.css');
+
+angular
+    .module('app', ['ui.router']);
+
+require('./app.route.js');
+
+require('./main.component.js');
+require('./home/home.component.js');
+require('./assess/assess.component.js');
+require('./assess/entities.component.js');
+require('./assess/finances.component.js');
+require('./assess/commitments.component.js');
+require('./assess/review.component.js');

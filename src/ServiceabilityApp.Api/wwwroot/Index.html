@@ -4,33 +4,8 @@
     <meta charset="utf-8" />
     <title>Serviceability App</title>
 </head>
-<body>
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Serviceability</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <!--<li><a href="#">About</a></li>-->
-                        <!--<li><a href="#">Contact</a></li>-->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="jumbotron">
-            <h1>Are you a Poor Cunt?</h1>
-            <p>A serviceability application by Bill and Aaron.</p>
-        </div>
-    </div>
+<body ng-app="app">
+    <ui-view/>
     <script src="vendor.bundle.js"></script>
     <script src="app.bundle.js"></script>
 </body>
