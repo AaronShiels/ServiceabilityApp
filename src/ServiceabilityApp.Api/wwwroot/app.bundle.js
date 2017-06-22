@@ -40,21 +40,21 @@ module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n      
 /***/ 105:
 /***/ (function(module, exports) {
 
-module.exports = "<fieldset>\r\n    <legend>Commitments</legend>\r\n    <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n        <div class=\"panel-heading\">\r\n            <h3 class=\"panel-title\">#{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n            Commitments and debts placeholder...\r\n        </div>\r\n    </div>\r\n</fieldset>"
+module.exports = "<fieldset>\r\n    <legend>Commitments</legend>\r\n    <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n        <div class=\"panel-heading\">\r\n            #{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}\r\n        </div>\r\n        <div class=\"panel-body\">\r\n            Commitments and debts placeholder...\r\n        </div>\r\n    </div>\r\n</fieldset>"
 
 /***/ }),
 
 /***/ 106:
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"form-inline\" name=\"entitiesForm\" novalidate>\r\n    <fieldset>\r\n        <legend>Entities</legend>\r\n        <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n            <div class=\"panel-heading\">\r\n                <h3 class=\"panel-title\">#{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}</h3>\r\n            </div>\r\n            <div class=\"panel-body\">\r\n                <ng-form name=\"entityForm\" >\r\n                    <div class=\"form-group\">\r\n                        <label>Name</label>\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"First Name\" name=\"firstName\" ng-model=\"entity.firstName\">\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"Last Name\" name=\"lastName\" ng-model=\"entity.lastName\">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"dob\">Date Of Birth</label>\r\n                        <input type=\"date\" class=\"form-control\" placeholder=\"00/00/0000\" name=\"dob\"  ng-model=\"entity.dob\">\r\n                    </div>\r\n                    <button type=\"button\" class=\"btn btn-danger pull-right\" ng-click=\"$ctrl.remove(entity)\">\r\n                        <span class=\"glyphicon glyphicon-remove\"></span> Remove\r\n                    </button>\r\n                </ng-form>\r\n            </div>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-success\" ng-click=\"$ctrl.add()\">\r\n            <span class=\"glyphicon glyphicon-plus\"></span> Add Entity\r\n        </button>\r\n    </fieldset>\r\n</form>"
+module.exports = "<form name=\"entitiesForm\" novalidate>\r\n    <fieldset>\r\n        <legend>Entities</legend>\r\n        <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n            <div class=\"panel-heading\">\r\n                #{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}\r\n                <button type=\"button\" class=\"close\" ng-click=\"$ctrl.remove(entity)\"><span>&times;</span></button>\r\n            </div>\r\n            <div class=\"panel-body\">\r\n                <ng-form name=\"entityForm\">\r\n                    <div class=\"form-group col-md-4\">\r\n                        <label for=\"firstName\">First Name</label>\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"First Name\" name=\"firstName\" ng-model=\"entity.firstName\">\r\n                    </div>\r\n                    <div class=\"form-group col-md-4\">\r\n                        <label for=\"lastName\">Last Name</label>\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"Last Name\" name=\"lastName\" ng-model=\"entity.lastName\">\r\n                    </div>\r\n                    <div class=\"form-group col-md-4\">\r\n                        <label for=\"dob\">Date Of Birth</label>\r\n                        <input type=\"date\" class=\"form-control\" placeholder=\"00/00/0000\" name=\"dob\" ng-model=\"entity.dob\">\r\n                    </div>\r\n                </ng-form>\r\n            </div>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-success\" ng-click=\"$ctrl.add()\">\r\n            <span class=\"glyphicon glyphicon-plus\"></span> Add Entity\r\n        </button>\r\n    </fieldset>\r\n</form>"
 
 /***/ }),
 
 /***/ 107:
 /***/ (function(module, exports) {
 
-module.exports = "<fieldset>\r\n    <legend>Finances</legend>\r\n    <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">#{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}</h3>\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        Finances placeholder...\r\n    </div>\r\n</div>\r\n</fieldset>"
+module.exports = "<fieldset>\r\n    <legend>Finances</legend>\r\n    <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n    <div class=\"panel-heading\">\r\n        #{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        Finances placeholder...\r\n    </div>\r\n</div>\r\n</fieldset>"
 
 /***/ }),
 
@@ -752,7 +752,7 @@ function entitiesComponent() {
             var index = ctrl.entities.indexOf(entity);
             ctrl.entities.splice(index, 1);
 
-            console.log('Entity #' + index + ' removed.');
+            console.log('Entity ' + index + ' removed.');
         }
     }
 }

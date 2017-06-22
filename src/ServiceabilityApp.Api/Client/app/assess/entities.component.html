@@ -1,24 +1,25 @@
-﻿<form class="form-inline" name="entitiesForm" novalidate>
+﻿<form name="entitiesForm" novalidate>
     <fieldset>
         <legend>Entities</legend>
         <div class="panel panel-default" ng-repeat="entity in $ctrl.entities">
             <div class="panel-heading">
-                <h3 class="panel-title">#{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}</h3>
+                #{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}
+                <button type="button" class="close" ng-click="$ctrl.remove(entity)"><span>&times;</span></button>
             </div>
             <div class="panel-body">
-                <ng-form name="entityForm" >
-                    <div class="form-group">
-                        <label>Name</label>
+                <ng-form name="entityForm">
+                    <div class="form-group col-md-4">
+                        <label for="firstName">First Name</label>
                         <input type="text" class="form-control" placeholder="First Name" name="firstName" ng-model="entity.firstName">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="lastName">Last Name</label>
                         <input type="text" class="form-control" placeholder="Last Name" name="lastName" ng-model="entity.lastName">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-4">
                         <label for="dob">Date Of Birth</label>
-                        <input type="date" class="form-control" placeholder="00/00/0000" name="dob"  ng-model="entity.dob">
+                        <input type="date" class="form-control" placeholder="00/00/0000" name="dob" ng-model="entity.dob">
                     </div>
-                    <button type="button" class="btn btn-danger pull-right" ng-click="$ctrl.remove(entity)">
-                        <span class="glyphicon glyphicon-remove"></span> Remove
-                    </button>
                 </ng-form>
             </div>
         </div>
