@@ -5,7 +5,10 @@
 function financesComponent() {
     return {
         template: require('./finances.component.html'),
-        controller: financesController
+        controller: financesController,
+        bindings: {
+            entities: '='
+        }
     };
 
     function financesController() {

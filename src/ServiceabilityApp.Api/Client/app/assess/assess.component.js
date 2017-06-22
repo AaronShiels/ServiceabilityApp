@@ -10,5 +10,7 @@ function assessComponent() {
 
     function assessController() {
         var ctrl = this;
+
+        ctrl.entities = [{}];
     }
 }

@@ -5,7 +5,10 @@
 function reviewComponent() {
     return {
         template: require('./review.component.html'),
-        controller: reviewController
+        controller: reviewController,
+        bindings: {
+            entities: '='
+        }
     };
 
     function reviewController() {

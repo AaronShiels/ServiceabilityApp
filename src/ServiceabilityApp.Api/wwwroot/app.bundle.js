@@ -33,28 +33,28 @@ exports.push([module.i, "/*!\n * Bootstrap v3.3.7 (http://getbootstrap.com)\n * 
 /***/ 104:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <ul class=\"nav nav-pills nav-justified thumbnail\">\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.entities\">\r\n                    <h4 class=\"list-group-item-heading\">Entities</h4>\r\n                    <p class=\"list-group-item-text\">Companies, trusts and people</p>\r\n                </a>\r\n            </li>\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.finances\">\r\n                    <h4 class=\"list-group-item-heading\">Finances</h4>\r\n                    <p class=\"list-group-item-text\">Profit and loss and balance sheets</p>\r\n                </a>\r\n            </li>\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.commitments\">\r\n                    <h4 class=\"list-group-item-heading\">Commitments</h4>\r\n                    <p class=\"list-group-item-text\">Commitments and debts</p>\r\n                </a>\r\n            </li>\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.review\">\r\n                    <h4 class=\"list-group-item-heading\">Review</h4>\r\n                    <p class=\"list-group-item-text\">Review information and serviceability</p>\r\n                </a>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n<ui-view />"
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n        <ul class=\"nav nav-pills nav-justified thumbnail\">\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.entities\">\r\n                    <h4 class=\"list-group-item-heading\">Entities</h4>\r\n                    <p class=\"list-group-item-text\">Companies, trusts and people</p>\r\n                </a>\r\n            </li>\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.finances\">\r\n                    <h4 class=\"list-group-item-heading\">Finances</h4>\r\n                    <p class=\"list-group-item-text\">Profit and loss and balance sheets</p>\r\n                </a>\r\n            </li>\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.commitments\">\r\n                    <h4 class=\"list-group-item-heading\">Commitments</h4>\r\n                    <p class=\"list-group-item-text\">Commitments and debts</p>\r\n                </a>\r\n            </li>\r\n            <li ui-sref-active=\"active\">\r\n                <a ui-sref=\"main.assess.review\">\r\n                    <h4 class=\"list-group-item-heading\">Review</h4>\r\n                    <p class=\"list-group-item-text\">Review information and serviceability</p>\r\n                </a>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n<ui-view entities=\"$ctrl.entities\" />"
 
 /***/ }),
 
 /***/ 105:
 /***/ (function(module, exports) {
 
-module.exports = "<fieldset>\r\n    <legend>Commitments</legend>\r\n</fieldset>"
+module.exports = "<fieldset>\r\n    <legend>Commitments</legend>\r\n    <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n        <div class=\"panel-heading\">\r\n            <h3 class=\"panel-title\">#{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}</h3>\r\n        </div>\r\n        <div class=\"panel-body\">\r\n            Commitments and debts placeholder...\r\n        </div>\r\n    </div>\r\n</fieldset>"
 
 /***/ }),
 
 /***/ 106:
 /***/ (function(module, exports) {
 
-module.exports = "<fieldset>\r\n    <legend>Entities</legend>\r\n</fieldset>"
+module.exports = "<form class=\"form-inline\" name=\"entitiesForm\" novalidate>\r\n    <fieldset>\r\n        <legend>Entities</legend>\r\n        <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n            <div class=\"panel-heading\">\r\n                <h3 class=\"panel-title\">#{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}</h3>\r\n            </div>\r\n            <div class=\"panel-body\">\r\n                <ng-form name=\"entityForm\" >\r\n                    <div class=\"form-group\">\r\n                        <label>Name</label>\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"First Name\" name=\"firstName\" ng-model=\"entity.firstName\">\r\n                        <input type=\"text\" class=\"form-control\" placeholder=\"Last Name\" name=\"lastName\" ng-model=\"entity.lastName\">\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"dob\">Date Of Birth</label>\r\n                        <input type=\"date\" class=\"form-control\" placeholder=\"00/00/0000\" name=\"dob\"  ng-model=\"entity.dob\">\r\n                    </div>\r\n                    <button type=\"button\" class=\"btn btn-danger pull-right\" ng-click=\"$ctrl.remove(entity)\">\r\n                        <span class=\"glyphicon glyphicon-remove\"></span> Remove\r\n                    </button>\r\n                </ng-form>\r\n            </div>\r\n        </div>\r\n        <button type=\"button\" class=\"btn btn-success\" ng-click=\"$ctrl.add()\">\r\n            <span class=\"glyphicon glyphicon-plus\"></span> Add Entity\r\n        </button>\r\n    </fieldset>\r\n</form>"
 
 /***/ }),
 
 /***/ 107:
 /***/ (function(module, exports) {
 
-module.exports = "<fieldset>\r\n    <legend>Finances</legend>\r\n</fieldset>"
+module.exports = "<fieldset>\r\n    <legend>Finances</legend>\r\n    <div class=\"panel panel-default\" ng-repeat=\"entity in $ctrl.entities\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">#{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}</h3>\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        Finances placeholder...\r\n    </div>\r\n</div>\r\n</fieldset>"
 
 /***/ }),
 
@@ -690,6 +690,8 @@ function assessComponent() {
 
     function assessController() {
         var ctrl = this;
+
+        ctrl.entities = [{}];
     }
 }
 
@@ -705,7 +707,10 @@ function assessComponent() {
 function commitmentsComponent() {
     return {
         template: __webpack_require__(105),
-        controller: commitmentsController
+        controller: commitmentsController,
+        bindings: {
+            entities: '='
+        }
     };
 
     function commitmentsController() {
@@ -725,11 +730,30 @@ function commitmentsComponent() {
 function entitiesComponent() {
     return {
         template: __webpack_require__(106),
-        controller: entitiesController
+        controller: entitiesController,
+        bindings: {
+            entities: '='
+        }
     };
 
     function entitiesController() {
         var ctrl = this;
+
+        ctrl.add = add;
+        ctrl.remove = remove;
+
+        function add() {
+            ctrl.entities.push({});
+
+            console.log('Entity added.');
+        }
+
+        function remove(entity) {
+            var index = ctrl.entities.indexOf(entity);
+            ctrl.entities.splice(index, 1);
+
+            console.log('Entity #' + index + ' removed.');
+        }
     }
 }
 
@@ -745,7 +769,10 @@ function entitiesComponent() {
 function financesComponent() {
     return {
         template: __webpack_require__(107),
-        controller: financesController
+        controller: financesController,
+        bindings: {
+            entities: '='
+        }
     };
 
     function financesController() {
@@ -765,7 +792,10 @@ function financesComponent() {
 function reviewComponent() {
     return {
         template: __webpack_require__(108),
-        controller: reviewController
+        controller: reviewController,
+        bindings: {
+            entities: '='
+        }
     };
 
     function reviewController() {

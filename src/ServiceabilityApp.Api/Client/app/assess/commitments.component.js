@@ -5,7 +5,10 @@
 function commitmentsComponent() {
     return {
         template: require('./commitments.component.html'),
-        controller: commitmentsController
+        controller: commitmentsController,
+        bindings: {
+            entities: '='
+        }
     };
 
     function commitmentsController() {
