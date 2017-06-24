@@ -14,6 +14,7 @@ require('./main.component.js');
 require('./home/home.component.js');
 require('./assess/assess.component.js');
 require('./assess/entities.component.js');
+require('./assess/entity-selector.component.js');
 require('./assess/finances.component.js');
 require('./assess/commitments.component.js');
 require('./assess/review.component.js');

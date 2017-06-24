@@ -12,6 +12,18 @@ function commitmentsComponent() {
     };
 
     function commitmentsController() {
+        this.$onInit = onInit;
+
         var ctrl = this;
+        ctrl.currentEntity = {};
+        ctrl.setIndex = setIndex;
+
+        function setIndex(index) {
+            ctrl.currentEntity = ctrl.entities[index];
+        }
+
+        function onInit() {
+            ctrl.currentEntity = ctrl.entities[0];
+        }
     }
 }

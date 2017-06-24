@@ -1,9 +1,9 @@
 ﻿<form name="entitiesForm" novalidate>
     <fieldset>
         <legend>Entities</legend>
-        <div class="panel panel-default" ng-repeat="entity in $ctrl.entities">
+        <div class="panel panel-primary" ng-repeat="entity in $ctrl.entities">
             <div class="panel-heading">
-                #{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}
+                <span class="glyphicon glyphicon-user"></span> {{entity.firstName}} {{entity.lastName}}
                 <button type="button" class="close" ng-click="$ctrl.remove(entity)"><span>&times;</span></button>
             </div>
             <div class="panel-body">

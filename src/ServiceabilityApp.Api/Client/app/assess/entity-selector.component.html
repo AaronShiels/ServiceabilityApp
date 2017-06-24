@@ -1,0 +1,7 @@
+﻿<ul class="nav nav-pills nav-stacked">
+    <li ng-repeat="entity in $ctrl.entities" ng-class="{ 'active': $ctrl.index == $index }">
+        <a href="javascript:void(0)" ng-click="$ctrl.select($index)">
+            <span class="glyphicon glyphicon-user"></span> {{entity.firstName}} {{entity.lastName}}
+        </a>
+    </li>
+</ul>

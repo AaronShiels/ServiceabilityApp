@@ -1,11 +1,19 @@
 ﻿<fieldset>
     <legend>Commitments</legend>
-    <div class="panel panel-default" ng-repeat="entity in $ctrl.entities">
-        <div class="panel-heading">
-            #{{ $index + 1 }} {{entity.firstName}} {{entity.lastName}}
+    <div class="row">
+        <div class="col-md-3">
+            <entity-selector entities="$ctrl.entities" on-select="$ctrl.setIndex(index)"></entity-selector>
         </div>
-        <div class="panel-body">
-            Commitments and debts placeholder...
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Commitments/Debts for {{$ctrl.currentEntity.firstName}} {{$ctrl.currentEntity.lastName}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                </div>
+            </div>
         </div>
     </div>
 </fieldset>
