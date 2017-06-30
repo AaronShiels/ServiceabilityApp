@@ -5,18 +5,7 @@
             <entity-selector entities="$ctrl.entities" on-select="$ctrl.setIndex(index)"></entity-selector>
         </div>
         <div class="col-md-9">
-            <ul class="nav nav-tabs">
-                <li class="active">
-                    <a href="javascript:void(0)">FY2017</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">FY2016</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)">FY2015</a>
-                </li>
-            </ul>
-            <h3>{{$ctrl.currentEntity.firstName}} {{$ctrl.currentEntity.lastName}} FY2017</h3>
+            <h3>{{$ctrl.currentEntity.firstName}} {{$ctrl.currentEntity.lastName}}</h3>
             <form class="form-horizontal" novalidate>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -24,116 +13,70 @@
                             Taxable Income
                         </h3>
                     </div>
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Pay As You Go</label>
-                            <div class="col-md-3">
-                                <div class="input-group">
-                                    <div class="input-group-addon">$</div>
-                                    <input type="number" class="form-control text-right" value="0" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="description" />
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-success btn-block" onclick="alert('gib time pl0x')">
-                            <span class="glyphicon glyphicon-plus"></span> Add Income
-                        </button>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="col-md-3 text-right">
-                                <strong>Subtotal Taxable Income</strong>
-                            </div>
-                            <div class="col-md-9">$0.00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Tax Deductables
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Depreciation</label>
-                            <div class="col-md-3">
-                                <div class="input-group">
-                                    <div class="input-group-addon">$</div>
-                                    <input type="number" class="form-control text-right" value="0" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="description" />
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-success btn-block" onclick="alert('gib time pl0x')">
-                            <span class="glyphicon glyphicon-plus"></span> Add Deductable
-                        </button>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="col-md-3 text-right">
-                                <strong>Subtotal Tax Deductibles</strong>
-                            </div>
-                            <div class="col-md-9">$0.00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default body-grey">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-3 text-right">
-                                <strong>Tax Payable</strong>
-                            </div>
-                            <div class="col-md-9">$0.00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Tax-free Income
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Unfranked Dividends</label>
-                            <div class="col-md-3">
-                                <div class="input-group">
-                                    <div class="input-group-addon">$</div>
-                                    <input type="number" class="form-control text-right" value="0" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="description" />
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-success btn-block" onclick="alert('gib time pl0x')">
-                            <span class="glyphicon glyphicon-plus"></span> Add Income
-                        </button>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="col-md-3 text-right">
-                                <strong>Subtotal Tax-free Income</strong>
-                            </div>
-                            <div class="col-md-9">$0.00</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel panel-default body-primary">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-3 text-right">
-                                <strong>Income for Servicing</strong>
-                            </div>
-                            <div class="col-md-9">$0.00</div>
-                        </div>
-                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="col-md-4 text-center">
+                                    Item
+                                </th>
+                                <th class="col-md-2 text-center">
+                                    FY2014
+                                </th>
+                                <th class="col-md-2 text-center">
+                                    FY2015
+                                </th>
+                                <th class="col-md-2 text-center">
+                                    FY2016
+                                </th>
+                                <th class="col-md-2 text-center">
+                                    FY2017
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Pay As You Go</strong>
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Some Other Shit</strong>
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                                <td class="input-control">
+                                    <input type="number" placeholder="0.00" class="form-control text-right" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <button type="button" class="btn btn-success btn-block" onclick="alert('gib time pl0x')">
+                                        <span class="glyphicon glyphicon-plus"></span> Add Income
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </form>
         </div>
