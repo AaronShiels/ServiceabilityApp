@@ -1,0 +1,14 @@
+﻿
+<div class="modal-header">
+    <h3 class="modal-title">Remove {{$ctrl.text}}?</h3>
+</div>
+<form name="removeForm" novalidate>
+    <div class="modal-footer">
+        <button class="btn btn-danger" type="submit" ng-click="$ctrl.remove()">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+        </button>
+        <button class="btn btn-default" type="button" ng-click="$ctrl.cancel()">
+            <span class="glyphicon glyphicon-default"></span> Cancel
+        </button>
+    </div>
+</form>
