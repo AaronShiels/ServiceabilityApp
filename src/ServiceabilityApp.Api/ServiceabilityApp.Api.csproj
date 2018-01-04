@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Content Include="Client\css\site.css" />
-    <Content Include="wwwroot\Index.html" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -19,15 +18,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Client\app\assess\remove-modal.component.js">
-      <DependentUpon>remove-modal.component.html</DependentUpon>
-    </None>
-    <None Update="Client\app\assess\review.component.js">
-      <DependentUpon>review.component.html</DependentUpon>
-    </None>
-    <None Update="Client\app\assess\entities.component.js">
-      <DependentUpon>entities.component.html</DependentUpon>
-    </None>
+    <None Include="wwwroot\448c34a56d699c29117adc64c43affeb.woff2" />
+    <None Include="wwwroot\89889688147bd7575d6327160d64e760.svg" />
+    <None Include="wwwroot\app.bundle.js" />
+    <None Include="wwwroot\vendor.bundle.js" />
   </ItemGroup>
-
 </Project>
