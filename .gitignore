@@ -287,14 +287,11 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-# dependencies
-/node_modules
-
 # testing
-/coverage
+coverage
 
 # production
-/build
+build/
 
 # misc
 .DS_Store
