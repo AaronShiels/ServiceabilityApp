@@ -8830,7 +8830,7 @@ module.exports = "<fieldset>\r\n    <legend>Review</legend>\r\n</fieldset>"
 /* 117 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\r\n    <h1>Are you in need of a loan?</h1>\r\n    <p>A serviceability application by Bill and Aaron.</p>\r\n</div>"
+    module.exports = "<div class=\"jumbotron\">\r\n    <h1>In need of a loan?</h1>\r\n    <p>A serviceability application PoC by Aaron Shiels.</p>\r\n</div>"
 
 /***/ }),
 /* 118 */
